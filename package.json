@@ -1,0 +1,14 @@
+{
+  "name": "guestbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Retro website guestbook + guest counter as a Cloudflare Worker",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
