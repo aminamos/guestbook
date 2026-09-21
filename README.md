@@ -23,8 +23,15 @@ odometer visitor counter, rainbow dividers, Comic Sans, kaomoji moods.
 | `GET` | `/api/entries?limit=50&before=<id>` | newest-first entries |
 | `POST` | `/api/sign` | `{name, message, website?}` signs the book |
 | `DELETE` | `/api/entries/:id` | moderation (needs `X-Admin-Secret`) |
-| `GET` | `/embed.js` | the drop-in widget |
+| `GET` | `/embed.js` | the drop-in widget (add `data-wall="adastroworld"` to the div to bind it to a wall) |
 | `GET` | `/` | demo page (full MySpace profile parody) |
+| `GET` | `/:handle` | personal wall page, e.g. `/adastroworld` |
+| `GET` | `/api/walls/:handle` | wall profile + owner-picked top 8 |
+| `POST` | `/api/walls/:handle/top8` | set top 8: `{top8: [{name, url?, note?}]}` max 8 (needs `X-Admin-Secret`) |
+| `POST` | `/api/walls/:handle/profile` | edit profile: `{profile: {mood, currently, interests, heroes, about}}` (needs `X-Admin-Secret`) |
+
+`POST /api/sign` also accepts `wall` (must be an existing wall handle).
+`GET /api/count` and `GET /api/entries` accept `?wall=<handle>` to scope to a wall.
 
 Spam armor: honeypot field, 5 signs/hour per IP, length caps. No accounts,
 no tracking, no cookies.
