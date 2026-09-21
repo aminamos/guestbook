@@ -1,0 +1,1 @@
+{"application_type":"web","client_id":"https://YOUR_DOMAIN/oauth/client-metadata.json","dpop_bound_access_tokens":true,"grant_types":["authorization_code","refresh_token"],"redirect_uris":["https://YOUR_DOMAIN/auth/bsky/callback"],"response_types":["code"],"scope":"atproto transition:generic","token_endpoint_auth_method":"none"}
